@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 500px;
+      padding: 20px;
+      font-family: "Microsoft YaHei", "微軟正黑體", sans-serif;
+      background-color: #fff;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #ff8ba7;
+      margin-bottom: 40px;
+      font-size: 28px;
+      font-weight: normal;
+      position: relative;
+    }
+    h1:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background-color: #ff8ba7;
+    }
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+    .form-group .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      color: #ff8ba7;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ffd3dc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+      background-color: #fff;
+      transition: all 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #ff8ba7;
+      box-shadow: 0 0 0 2px rgba(255,139,167,0.1);
+    }
+    input::placeholder {
+      color: #999;
+    }
+    .gender-group {
+      display: flex;
+      gap: 10px;
+    }
+    .gender-btn {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ffd3dc;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .gender-btn.active {
+      background: #ff8ba7;
+      color: #fff;
+      border-color: #ff8ba7;
+    }
+    .name-length-btn {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ffd3dc;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .name-length-btn.active {
+      background: #ff8ba7;
+      color: #fff;
+      border-color: #ff8ba7;
+    }
+    .meaning-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .meaning-tag {
+      padding: 6px 12px;
+      border: 1px solid #ffd3dc;
+      border-radius: 20px;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+    .meaning-tag.active {
+      background: #ff8ba7;
+      color: #fff;
+      border-color: #ff8ba7;
+    }
+    .meaning-tag.tag-clicked {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px 20px;
+      background: #ff8ba7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    button:hover {
+      background: #ff9fb7;
+    }
+    .date-group {
+      display: flex;
+      gap: 10px;
+    }
+    .date-group input[type="date"] {
+      flex: 2;
+    }
+    .date-group select {
+      flex: 1;
+    }
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 30px;
+    }
+    .form-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #666;
+      font-size: 14px;
+    }
+    .form-label svg {
+      width: 16px;
+      height: 16px;
+      fill: #ff8ba7;
+    }
+    .error-tip {
+      display: none;
+      color: #ff4d4f;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    
+    .form-group.has-error input,
+    .form-group.has-error select,
+    .form-group.has-error .gender-group {
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="pageTitle"></h1>
+  
+  <div class="form-group">
+    <div class="form-label">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+      <span data-i18n="surname"></span>
+    </div>
+    <input type="text" id="surname" data-i18n-placeholder="inputSurname">
+    <div class="error-tip" id="surname-error" data-i18n="surnameError"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
+      <svg viewBox="0 0 24 24">
+        <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/>
+      </svg>
+      <span data-i18n="gender"></span>
+    </div>
+    <div class="gender-group">
+      <div class="gender-btn active" data-value="male" data-i18n="maleBaby"></div>
+      <div class="gender-btn" data-value="female" data-i18n="femaleBaby"></div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+      </svg>
+      <span data-i18n="nameLength"></span>
+    </div>
+    <div class="gender-group">
+      <div class="name-length-btn active" data-value="2" data-i18n="twoChar"></div>
+      <div class="name-length-btn" data-value="3" data-i18n="threeChar"></div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
+      <svg viewBox="0 0 24 24">
+        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+      </svg>
+      <span data-i18n="birthDate"></span>
+    </div>
+    <div class="date-group">
+      <input type="date" id="birthDate">
+      <select id="birthTime">
+        <option value="" data-i18n="birthTimeUnknown"></option>
+        <option value="00:00" data-i18n="birthTimeZi"></option>
+        <option value="02:00" data-i18n="birthTimeChou"></option>
+        <option value="04:00" data-i18n="birthTimeYin"></option>
+        <option value="06:00" data-i18n="birthTimeMao"></option>
+        <option value="08:00" data-i18n="birthTimeChen"></option>
+        <option value="10:00" data-i18n="birthTimeSi"></option>
+        <option value="12:00" data-i18n="birthTimeWu"></option>
+        <option value="14:00" data-i18n="birthTimeWei"></option>
+        <option value="16:00" data-i18n="birthTimeShen"></option>
+        <option value="18:00" data-i18n="birthTimeYou"></option>
+        <option value="20:00" data-i18n="birthTimeXu"></option>
+        <option value="22:00" data-i18n="birthTimeHai"></option>
+      </select>
+    </div>
+    <div class="error-tip" id="birth-error" data-i18n="birthDateError"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+      </svg>
+      <span data-i18n="meaning"></span>
+    </div>
+    <div class="meaning-tags">
+      <div class="meaning-tag" data-i18n="meaningWisdom"></div>
+      <div class="meaning-tag" data-i18n="meaningBlessing"></div>
+      <div class="meaning-tag" data-i18n="meaningHealth"></div>
+      <div class="meaning-tag" data-i18n="meaningTalent"></div>
+      <div class="meaning-tag" data-i18n="meaningElegant"></div>
+      <div class="meaning-tag" data-i18n="meaningWealth"></div>
+    </div>
+    <textarea id="custom-meaning" data-i18n-placeholder="meaningPlaceholder"></textarea>
+  </div>
+
+  <button id="startNaming" data-i18n="startNaming">
+  </button>
+
+  <script src="popup.js"></script>
+</body>
+</html> 
