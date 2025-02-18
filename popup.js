@@ -139,11 +139,17 @@ document.addEventListener('DOMContentLoaded', function() {
       birthDate,
       birthTime,
       requirements,
-      submit: '1' // 添加自动提交参数
+      submit: '1'
     });
 
+    // 根据当前语言选择URL
+    const currentLang = chrome.i18n.getUILanguage();
+    const baseUrl = currentLang.toLowerCase().startsWith('zh-cn') 
+      ? 'https://bbname.cc/zh-CN/naming'
+      : 'https://bbname.cc/naming';
+    
     // 在新标签页中打开网址
-    window.open(`https://bbname.cc/naming?${params.toString()}`, '_blank');
+    window.open(`${baseUrl}?${params.toString()}`, '_blank');
   });
 
   // 添加输入事件监听，在用户输入时清除错误提示

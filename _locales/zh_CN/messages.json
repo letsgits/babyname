@@ -1,0 +1,154 @@
+{
+  "appName": {
+    "message": "宝宝取名",
+    "description": "扩展功能名称"
+  },
+  "appDesc": {
+    "message": "为宝宝打造独特而富有寓意的名字",
+    "description": "扩展功能描述"
+  },
+  "pageTitle": {
+    "message": "免费八字取名",
+    "description": "页面标题"
+  },
+  "surname": {
+    "message": "宝宝姓氏",
+    "description": "姓氏标签"
+  },
+  "inputSurname": {
+    "message": "请输入宝宝姓氏",
+    "description": "姓氏输入提示"
+  },
+  "surnameError": {
+    "message": "请输入宝宝姓氏",
+    "description": "姓氏错误提示"
+  },
+  "gender": {
+    "message": "宝宝性别",
+    "description": "性别标签"
+  },
+  "maleBaby": {
+    "message": "男宝宝",
+    "description": "男宝宝选项"
+  },
+  "femaleBaby": {
+    "message": "女宝宝",
+    "description": "女宝宝选项"
+  },
+  "nameLength": {
+    "message": "名字长度",
+    "description": "名字长度标签"
+  },
+  "twoChar": {
+    "message": "二字名",
+    "description": "二字名选项"
+  },
+  "threeChar": {
+    "message": "三字名",
+    "description": "三字名选项"
+  },
+  "birthDate": {
+    "message": "出生日期/预产期",
+    "description": "出生日期标签"
+  },
+  "birthTimeUnknown": {
+    "message": "未知/不清楚",
+    "description": "时辰未知选项"
+  },
+  "birthDateError": {
+    "message": "请选择出生日期",
+    "description": "出生日期错误提示"
+  },
+  "meaning": {
+    "message": "期望寓意",
+    "description": "期望寓意标签"
+  },
+  "meaningPlaceholder": {
+    "message": "请输入您对宝宝名字的期望...",
+    "description": "期望寓意输入提示"
+  },
+  "startNaming": {
+    "message": "开始取名",
+    "description": "开始取名按钮文字"
+  },
+  "birthTimeZi": {
+    "message": "子时 (23:00-01:00)",
+    "description": "子时时间段"
+  },
+  "birthTimeChou": {
+    "message": "丑时 (01:00-03:00)",
+    "description": "丑时时间段"
+  },
+  "birthTimeYin": {
+    "message": "寅时 (03:00-05:00)",
+    "description": "寅时时间段"
+  },
+  "birthTimeMao": {
+    "message": "卯时 (05:00-07:00)",
+    "description": "卯时时间段"
+  },
+  "birthTimeChen": {
+    "message": "辰时 (07:00-09:00)",
+    "description": "辰时时间段"
+  },
+  "birthTimeSi": {
+    "message": "巳时 (09:00-11:00)",
+    "description": "巳时时间段"
+  },
+  "birthTimeWu": {
+    "message": "午时 (11:00-13:00)",
+    "description": "午时时间段"
+  },
+  "birthTimeWei": {
+    "message": "未时 (13:00-15:00)",
+    "description": "未时时间段"
+  },
+  "birthTimeShen": {
+    "message": "申时 (15:00-17:00)",
+    "description": "申时时间段"
+  },
+  "birthTimeYou": {
+    "message": "酉时 (17:00-19:00)",
+    "description": "酉时时间段"
+  },
+  "birthTimeXu": {
+    "message": "戌时 (19:00-21:00)",
+    "description": "戌时时间段"
+  },
+  "birthTimeHai": {
+    "message": "亥时 (21:00-23:00)",
+    "description": "亥时时间段"
+  },
+  "meaningWisdom": {
+    "message": "智慧聪颖",
+    "description": "智慧寓意"
+  },
+  "meaningBlessing": {
+    "message": "福气绵长",
+    "description": "福气寓意"
+  },
+  "meaningHealth": {
+    "message": "健康平安",
+    "description": "健康寓意"
+  },
+  "meaningTalent": {
+    "message": "才华横溢",
+    "description": "才华寓意"
+  },
+  "meaningElegant": {
+    "message": "优雅大方",
+    "description": "优雅寓意"
+  },
+  "meaningWealth": {
+    "message": "富贵吉祥",
+    "description": "富贵寓意"
+  },
+  "meaningPrefix": {
+    "message": "希望参考",
+    "description": "期望寓意前缀"
+  },
+  "appAuthor": {
+    "message": "BB八字取名网",
+    "description": "扩展功能作者"
+  }
+} 

@@ -146,5 +146,9 @@
   "meaningPrefix": {
     "message": "希望參考",
     "description": "期望寓意前綴"
+  },
+  "appAuthor": {
+    "message": "BB八字取名網",
+    "description": "擴充功能作者"
   }
 } 
